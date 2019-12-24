@@ -1,0 +1,47 @@
+{
+  "name": "payment",
+  "version": "1.0.0",
+  "description": "payment",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.7",
+    "cookie-parser": "^1.4.4",
+    "dateformat": "^3.0.3",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "generate-password": "^1.4.2",
+    "joi": "^14.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "md5": "^2.2.1",
+    "mysql2": "^2.1.0",
+    "nodemailer": "^6.4.2",
+    "passport": "^0.4.1",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth": "^2.0.0",
+    "qs": "^6.9.1",
+    "request": "^2.88.0",
+    "sequelize": "^5.21.3",
+    "sha256": "^0.2.0",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huu4707/payment.git"
+  },
+  "keywords": [
+    "payment"
+  ],
+  "author": "huu4707",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huu4707/payment/issues"
+  },
+  "homepage": "https://github.com/huu4707/payment#readme"
+}

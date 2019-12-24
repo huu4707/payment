@@ -1,0 +1,19 @@
+{
+    "VAR_HOST": "localhost",
+    "VAR_USER": "root",
+    "VAR_PASSWORD": "",
+    "VAR_DATABASE": "payment",
+    "JWT_TOKEN_SECRET_KEY": "sau bao nam training",
+    "FB_APP_ID": "446047046333253",
+    "FB_APP_SECRET":"416d66e8afdb75521a2648a6e620cf8d",
+    "FB_CALLBACK_URL": "http://localhost:3000/account/auth/facebook/callback",
+    "GG_CLIENT_ID":"217836984420-6knmt7dp52d3n3pd6fokfkc46sj7tfur.apps.googleusercontent.com",
+    "GG_CLIENT_SECRET":"mvy5jxKf4WI1ahceJuvVpt_w",
+    "GG_CALLBACK_URL":"http://localhost:3000/account/auth/google/callback",
+    "LOG_DIR": "../log/",
+    "SENDER_EMAIL": "dev.test.3forcom",
+    "SENDER_PASSWORD": "3forcom123",
+    "HOST_SERVER": "http://localhost:3000",
+    "APP": "PAYMENT",
+    "ENDPOINT": "https://test-payment.momo.vn/gw_payment/transactionProcessor"
+}
