@@ -34,7 +34,6 @@ router.post('/create_payment_url', function (req, res, next) {
     vnp_Params['vnp_Version'] = '2';
     vnp_Params['vnp_Command'] = 'pay';
     vnp_Params['vnp_TmnCode'] = tmnCode;
-    // vnp_Params['vnp_Merchant'] = ''
     vnp_Params['vnp_Locale'] = locale;
     vnp_Params['vnp_CurrCode'] = currCode;
     vnp_Params['vnp_TxnRef'] = orderId;
@@ -54,11 +53,7 @@ router.post('/create_payment_url', function (req, res, next) {
     vnp_Params['vnp_SecureHashType'] =  'SHA256';
     vnp_Params['vnp_SecureHash'] = secureHash;
     vnpUrl += '?' + querystring.stringify(vnp_Params, { encode: true });
-
-    //Neu muon dung Redirect thi dong dong ben duoi
     res.status(200).json({code: '00', data: vnpUrl})
-    //Neu muon dung Redirect thi mo dong ben duoi va dong dong ben tren
-    //res.redirect(vnpUrl)
 });
 
 router.get('/vnpay_return', function (req, res, next) {

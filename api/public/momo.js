@@ -7,8 +7,8 @@ let { endpoint, hostname, path, partnerCode, accessKey, serectkey, returnUrl, no
 
 router.post('/create_payment_url', function (req, res, next) {
     let { orderInfo, amount } = req.body;
-    var orderId = "12345678901"
-    var requestId = "12345678901"
+    var orderId = "123456789010" // tao đơn hàng
+    var requestId = "123456789010"
     var rawSignature = "partnerCode="+partnerCode+"&accessKey="+accessKey+"&requestId="+requestId+"&amount="+amount+"&orderId="+orderId+"&orderInfo="+orderInfo+"&returnUrl="+returnUrl+"&notifyUrl="+notifyurl+"&extraData="+extraData
     var signature = crypto.createHmac('sha256', serectkey)
                    .update(rawSignature)
@@ -37,14 +37,19 @@ router.post('/create_payment_url', function (req, res, next) {
       };
       var request = require('request');
       request.post(options, function(error, response, body){
+            console.log('body', body)
             if(error) {
                 res.send({status: false, message: error.message, data: []});
             } else{
                 let data = JSON.parse(body);
-                let { errorCode, message, payUrl} = data;
+                let { errorCode, message, payUrl} = data; //lấy payUrl cho user quét qr
                 res.send({status: true, message: message, data: payUrl});
             }
       });
 });
 
+router.get('/webhook', function (req, res, next) {
+    console.log('req', req)
+    //nhan req từ momo về.
+});
 module.exports = router

@@ -12,4 +12,7 @@ app.use("/momo", momo)
 var vnpay = require('./vnpay.js');
 app.use("/vnpay", vnpay)
 
+var nganluong = require('./nganluong');
+app.use("/nganluong", nganluong)
+
 module.exports = router

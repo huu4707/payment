@@ -1,0 +1,10 @@
+{
+	"paymentGateway": "https://sandbox.nganluong.vn:8088/nl35/checkout.api.nganluong.post.php",
+	"merchant": "45571",
+	"receiverEmail": "tung.tran@naustud.io",
+    "secureSecret": "c57700e78cb0df1766279d91e3233c79",
+    "returnUrl": "http://localhost:3000/nganluong/webhook",
+    "cancelUrl": "http://localhost:3000/",
+    "paymentMethod": "ATM_ONLINE",
+    "version": "3.1"
+}
