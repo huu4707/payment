@@ -49,7 +49,10 @@ router.post('/create_payment_url', function (req, res, next) {
 });
 
 router.get('/webhook', function (req, res, next) {
-    console.log('req', req)
-    //nhan req từ momo về.
+    let { signature } = req.query;
+    var checkHash = crypto.createHmac('sha256', serectkey).update(rawSignature).digest('hex');
+    if(signature === checkHash) {
+        //xu ly
+    }
 });
 module.exports = router
