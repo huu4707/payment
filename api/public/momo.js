@@ -56,8 +56,8 @@ router.post('/create_payment_url', function (req, res, next) {
 
 router.get('/webhook', function (req, res, next) {
     let { signature, amount, orderId, message, localMessage, errorCode, payType, orderInfo} = req.query;
-    console.log('req.query', req.query)
-    var checkHash = crypto.createHmac('sha256', serectkey).update(signature).digest('hex');
+    var rawSignature = ".......";//nhat viet lại
+    var checkHash = crypto.createHmac('sha256', serectkey).update(rawSignature).digest('hex');
     if(signature === checkHash) {
         //xu ly
     }
