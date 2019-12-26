@@ -5,8 +5,8 @@
     "partnerCode": "MOMO5QEV20191224",
     "accessKey":"I5YhoyuUDMzsQqe9",
     "serectkey":"tdr8Pt8s45EOSFCKOqfEjgtQ4spGn4jW",
-    "returnUrl":"http://localhost:3000/",
-    "notifyurl":"http://localhost:3000/momo/webhook",
-    "requestType":"captureMoMoWallet",
+    "returnUrl":"http://localhost:3000/momo/webhook",
+    "notifyurl":"http://localhost:3000/",
+    "requestType":"payWithMoMoATM",
     "extraData":"merchantName=;merchantId="
 }

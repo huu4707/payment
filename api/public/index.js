@@ -15,4 +15,6 @@ app.use("/vnpay", vnpay)
 var nganluong = require('./nganluong');
 app.use("/nganluong", nganluong)
 
+var alepay = require('./alepay');
+app.use("/alepay", alepay)
 module.exports = router

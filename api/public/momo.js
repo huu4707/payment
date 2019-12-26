@@ -6,15 +6,21 @@ const crypto = require('crypto');
 let { endpoint, hostname, path, partnerCode, accessKey, serectkey, returnUrl, notifyurl, requestType, extraData } = config;
 
 router.post('/create_payment_url', function (req, res, next) {
-    let { orderInfo, amount } = req.body;
-    var orderId = "123456789010" // tao đơn hàng
-    var requestId = "123456789010"
-    var rawSignature = "partnerCode="+partnerCode+"&accessKey="+accessKey+"&requestId="+requestId+"&amount="+amount+"&orderId="+orderId+"&orderInfo="+orderInfo+"&returnUrl="+returnUrl+"&notifyUrl="+notifyurl+"&extraData="+extraData
+    let { orderInfo, amount, bankCode } = req.body;
+    var orderId = "1234567890111012" // tao đơn hàng
+    var requestId = "1234567890111012"
+    // let requestType = "captureMoMoWallet"; // thanh toán bang môm
+    if(requestType == "payWithMoMoATM") { //the ngan hang
+        var rawSignature = "partnerCode="+partnerCode+"&accessKey="+accessKey+"&requestId="+requestId+"&bankCode="+bankCode+"&amount="+amount+"&orderId="+orderId+"&orderInfo="+orderInfo+"&returnUrl="+returnUrl+"&notifyUrl="+notifyurl+"&extraData="+extraData+"&requestType="+requestType
+    } else{//qr momo
+        var rawSignature = "partnerCode="+partnerCode+"&accessKey="+accessKey+"&requestId="+requestId+"&amount="+amount+"&orderId="+orderId+"&orderInfo="+orderInfo+"&returnUrl="+returnUrl+"&notifyUrl="+notifyurl+"&extraData="+extraData
+    }
     var signature = crypto.createHmac('sha256', serectkey)
-                   .update(rawSignature)
-                   .digest('hex');
+        .update(rawSignature)
+        .digest('hex');
     var body = JSON.stringify({
         partnerCode : partnerCode,
+        bankCode,
         accessKey : accessKey,
         requestId : requestId,
         amount : amount,
@@ -49,8 +55,9 @@ router.post('/create_payment_url', function (req, res, next) {
 });
 
 router.get('/webhook', function (req, res, next) {
-    let { signature } = req.query;
-    var checkHash = crypto.createHmac('sha256', serectkey).update(rawSignature).digest('hex');
+    let { signature, amount, orderId, message, localMessage, errorCode, payType, orderInfo} = req.query;
+    console.log('req.query', req.query)
+    var checkHash = crypto.createHmac('sha256', serectkey).update(signature).digest('hex');
     if(signature === checkHash) {
         //xu ly
     }

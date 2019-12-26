@@ -4,5 +4,6 @@
     "encrypt_key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC3hpHQB8DUAEMnsql+sx9NF0WGcHb3osgUMtLxjAMghVj3E0Gl+97HtQYC6vrGAYO1eEQcOXwpUMZ22ZbxEp0SYRRDBk6DMbuoNT+WC0RmbvA9S2V6RP5SZ/kfBUTjlOVp39SbkShAVqTtUVz0dYTrqV2WO/vDNUplqXTnzd9gzQIDAQAB",
     "returnUrl": "http://localhost:3000/alepay/webhook",
     "cancelUrl": "http://localhost:3000/",
-    "base_url_alepay": "https://alepay-sandbox.nganluong.vn"
+    "base_url_alepay": "https://alepay-sandbox.nganluong.vn",
+    "checkoutType": "3"
 }
